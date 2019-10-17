@@ -1,6 +1,6 @@
 'use strict';
 
-var express = require('express');
+let express = require('express');
 
 // The website uses sendgrid for sending me emails
 // when a user signs up for the website.
@@ -8,7 +8,7 @@ var express = require('express');
 // const sgMail = require('@sendgrid/mail');
 // sgMail.setApiKey("YOURAPIKEYHERE");
 
-var server = express();
+let server = express();
 
 server.get('/subscribe', function(req,res){
 	if(req.query.email != 'undefined'){
@@ -25,7 +25,7 @@ server.get('/subscribe', function(req,res){
 		sgMail.send({
 		  to: 'req.query.email',
 		  from: 'hello@yourwebsite.org',
-		  subject: 'Subscribed to Ahimsa Mala',
+		  subject: 'Subscribed to YOURWEBSITE',
 		  text: 'Thank you for subscribing! ' + req.query.email
 		});
 	}
